@@ -1,0 +1,223 @@
+WindowManager:
+    Home:
+        id:main
+    Download:
+        id:second
+        main:main
+
+
+<Home>:
+    name:"Home"
+    MDBoxLayout:
+        spacing:2
+        size_hint_x:1
+        
+        orientation:"vertical"
+        
+        MDToolbar:
+            title:"NTSA"
+            md_bg_color:(0,0,0,1)
+            specific_text_color:0,0,0,1
+            size_hint_y:.05
+
+            spacing:10
+            padding:30                                                 
+            MDIconButton:
+
+                line_color_normal:(1,197/255,55/255,1)
+                icon:"facebook"
+                pos_hint:None,None
+                pos_hint:{"center_x":.5,"center_y":.5}
+                text_color: app.theme_cls.primary_color
+            MDIconButton:
+                line_color_normal:(1,197/255,55/255,1)
+                icon:"twitter"
+                pos_hint:None,None
+
+                text_color: app.theme_cls.primary_color
+                pos_hint:{"center_x":.5,"center_y":.5}
+            MDIconButton:
+                line_color_normal:(1,197/255,55/255,1)
+                icon:"github"
+                pos_hint:None,None
+                text_color: app.theme_cls.primary_color
+                pos_hint:{"center_x":.5,"center_y":.5}
+            MDCard:
+                size_hint:None,None
+                size:"35dp","35dp"
+                elevation:0
+                md_bg_color:(1,1,1,1)
+                radius:30,30,30,30
+                pos_hint:{"center_x":.5,"center_y":.5}
+                FitImage:
+                    source:"IMG_20200206_175255_2.jpg"
+                    md_bg_color:(1,1,1,1)
+                    radius:[36,36,37,36]
+
+        MDToolbar:
+
+            md_bg_color:(0,0,0,1)
+            specific_text_color:0,0,0,1
+            size_hint_y:.07
+
+            spacing:10
+            padding:30
+            MDRectangleFlatButton:
+
+                line_color_normal:(1,197/255,55/255,1)
+                text:"All"
+                pos_hint:None,None
+                pos_hint:{"center_x":.5,"center_y":.5}
+                text_color: app.theme_cls.primary_color
+            MDRectangleFlatButton:
+
+                line_color_normal:(1,197/255,55/255,1)
+                text:"Running"
+                pos_hint:None,None
+                pos_hint:{"center_x":.5,"center_y":.5}
+                text_color: (1,197/255,55/255,1)
+            MDRectangleFlatButton:
+                line_color_normal:(1,197/255,55/255,1)
+                text:"Finished"
+                pos_hint:None,None
+
+
+                text_color: (0,1,0,1)
+                pos_hint:{"center_x":.5,"center_y":.5}
+            MDRectangleFlatButton:
+                line_color_normal:(1,197/255,55/255,1)
+                text:"Failed"
+                pos_hint:None,None
+                text_color: (1,0,0,1)
+                pos_hint:{"center_x":.5,"center_y":.5}
+
+
+
+
+
+
+        MDBoxLayout:
+            size_hint_y:.8
+            MDFloatLayout:
+                md_bg_color:(0,0,0,1)
+                padding:10
+                size_hint_x:.1
+
+                MDRectangleFlatIconButton:
+                    text:"url"
+                    icon_size: "44sp"
+                    pos_hint:None,None
+                    pos_hint:{"center_x":.5,"center_y":.8}
+                    line_color:1,1,1,1
+                    icon:"plus"
+                    on_release:root.get_link()
+                MDRectangleFlatIconButton:
+                    text:"resume"
+                    line_color_normal:(1,197/255,55/255,1)
+                    pos_hint:None,None
+                    pos_hint:{"center_x":.5,"center_y":.7}
+                    icon:"play"
+                    line_color:1,1,1,1
+                    on_release:app.root.current= "Change_Car"
+                MDRectangleFlatIconButton:
+                    text:"pause"
+                    line_color_normal:(1,197/255,55/255,1)
+                    pos_hint:None,None
+                    line_color:1,1,1,1
+                    size:self.size
+                    pos_hint:{"center_x":.5,"center_y":.6}
+                    icon:"pause"
+                    on_release:app.root.current= "Change_Driver"
+                MDRectangleFlatIconButton:
+                    text:"video"
+                    line_color:1,1,1,1
+
+                    md_line_color_normal:(1,0,0,1)
+                    pos_hint:None,None
+                    pos_hint:{"center_x":.5,"center_y":.5}
+                    icon:"download"
+                MDRectangleFlatIconButton:
+                    text:"Setting"
+                    line_color:1,1,1,1
+
+                    md_line_color_normal:(1,0,0,1)
+                    pos_hint:None,None
+                    pos_hint:{"center_x":.5,"center_y":.4}
+                    icon:"cog"
+            ScrollView:
+                size_hint_x:.6
+                
+                MDList:
+                    id:container
+            ScrollView:
+                size_hint_x:.3
+                
+                MDList:
+                    id:cont
+                    padding:10
+                    MDLabel:
+                        text:"ACTIVE"
+                        bold:True
+                        halign:"center"
+
+
+<Download>:
+    name:"Download"
+    ScrollView:
+        pos_hint:{"center_x":.5,"center_y":.5}
+        size_hint_x:.6
+        size_hint_y:1
+        MDBoxLayout:
+            orientation:"vertical"
+            spacing:10
+            size_hint_y:1
+            size_hint_x:1
+            MDLabel:
+                text:""
+                id:file_title
+                size_hint_y:.03
+            MDCard:
+                size_hint_x:.95
+                size_hint_y:.4
+                md_bg_color:(1,1,1,1)
+
+                pos_hint:{"center_x":.5,"center_y":.5}
+
+                FitImage:
+                    id:file_thumbnail
+                    source:""
+                    md_bg_color:(1,1,1,1)
+            MDBoxLayout:
+                orientation:"vertical"
+
+                siz_hint_y:.7
+                Label:
+                    text:"Video"
+                    pos_hint:None,None
+                    size_hint_y:.03
+                    pos_hint:{"center_x":.5,"center_y":.1}
+                ScrollView:
+                    pos_hint:{"center_x":.5,"center_y":.5}
+                    size_hint_x:.6
+                    size_hint_y:1
+
+                    MDList:
+                        id:container
+                Label:
+                    text:"Audio"
+                    pos_hint:None,None
+                    size_hint_y:.03
+                    pos_hint:{"center_x":.5,"center_y":.1}
+                ScrollView:
+                    pos_hint:{"center_x":.5,"center_y":.5}
+                    size_hint_x:.6
+                    size_hint_y:1
+
+                    MDList:
+                        id:contain
+                MDLabel:
+                    text:"TExt"
+                    pos_hint:{"center_x":.5,"center_y":.5}
+                    halign:"center"
+                    size_hint_y:.02
+
